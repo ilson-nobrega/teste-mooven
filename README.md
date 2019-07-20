@@ -1,6 +1,9 @@
-# TesteMooven
+# Teste Mooven
 
 Projeto criado usando [Angular CLI](https://github.com/angular/angular-cli) versão 8.1.2.
+
+Todos os commits serão feitos na branch master para ganhar tempo.
+Mas poderíamos usar Git Flow para gerenciar melhor o projeto, já que separamos por demandas usando as Issues do Github.
 
 ## Servidor de Desenvolvimento
 
