@@ -11,4 +11,8 @@ export class AuthService {
     return !!localStorage.getItem('user_token');
   }
 
+  public logout(): void {
+    localStorage.removeItem('user_token');
+  }
+
 }

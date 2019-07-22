@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {GithubService} from '../../@core/services/github.service';
+import {AuthService} from '../../@core/services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +17,7 @@ export class ProfileComponent implements OnInit {
   public results: any;
 
   // Seto como nulo pra me ajudar a brincar com a view
-  constructor(private githubService: GithubService) {
+  constructor(private githubService: GithubService, private authService: AuthService, private router: Router) {
     this.user = null;
     this.results = null;
   }
@@ -40,5 +42,12 @@ export class ProfileComponent implements OnInit {
       .subscribe((res) => {
         this.user = res;
       });
+  }
+
+  // Método que desloga o usuário
+  logout($event): void {
+    $event.preventDefault();
+    this.authService.logout();
+    this.router.navigate(['/public']);
   }
 }
