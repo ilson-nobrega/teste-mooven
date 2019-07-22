@@ -1,0 +1,32 @@
+<p><i class="fab fa-github fa-5x"></i></p>
+<p>Seus repositórios públicos e privados. Ou se deseja <a routerLink="/admin/home"><b>buscar repositórios públicos</b></a>.</p>
+<div class="row">
+  <p>Resultados:</p>
+  <div class="col-12" *ngIf="results === null">
+    Carregando... =)
+  </div>
+  <div class="col-12" *ngIf="results !== null">
+    <table class="table table-light">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Proprietário</th>
+        <th scope="col">Linguagem</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let result of results">
+        <th scope="row">{{result.id}}</th>
+        <td>
+          <a [href]="result.html_url" target="_blank">{{result.name}}</a>
+        </td>
+        <td>
+          <a [href]="result.owner.html_url" target="_blank">{{result.owner.login}}</a>
+        </td>
+        <td>{{result.language}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

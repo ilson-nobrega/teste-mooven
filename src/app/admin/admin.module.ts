@@ -5,9 +5,10 @@ import {RouterModule} from '@angular/router';
 import {AdminRoutes} from './admin.routing';
 import { HomeComponent } from './home/home.component';
 import {GithubService} from '../@core/services/github.service';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
-  declarations: [TokenComponent, HomeComponent],
+  declarations: [TokenComponent, HomeComponent, ProfileComponent],
   providers: [GithubService],
   imports: [
     CommonModule,
