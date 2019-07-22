@@ -6,6 +6,9 @@ import {AppComponent} from './app.component';
 import {AppRoutes} from './app.routing';
 import {RouterModule} from '@angular/router';
 import {CoreModule} from './@core/core.module';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {TokenInterceptor} from './@core/interceptors/token.interceptor';
+import {AuthService} from './@core/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -14,9 +17,17 @@ import {CoreModule} from './@core/core.module';
   imports: [
     BrowserModule,
     CoreModule,
-    RouterModule.forRoot(AppRoutes, {useHash: true})
+    RouterModule.forRoot(AppRoutes, {useHash: true}),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

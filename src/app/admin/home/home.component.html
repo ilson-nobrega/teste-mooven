@@ -1,0 +1,32 @@
+<p><i class="fab fa-github fa-5x"></i></p>
+<p>Buscar repositórios públicos ou <a routerLink="/admin/profile"><b>ver meus repositórios</b></a>.</p>
+<form novalidate>
+  <input type="text" class="form-control" #searchField>
+</form>
+<div class="row" *ngIf="results !== null">
+  <p>Resultados:</p>
+  <div class="col-12">
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Proprietário</th>
+          <th scope="col">Linguagem</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of results.items">
+          <th scope="row">{{result.id}}</th>
+          <td>
+            <a [href]="result.html_url" target="_blank">{{result.name}}</a>
+          </td>
+          <td>
+            <a [href]="result.owner.html_url" target="_blank">{{result.owner.login}}</a>
+          </td>
+          <td>{{result.language}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
