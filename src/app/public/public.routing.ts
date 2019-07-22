@@ -3,11 +3,11 @@ import {IndexComponent} from './index/index.component';
 
 export const PublicRoutes: Routes = [
   {
-    path: 'public',
-    children: [{
       path: '',
       component: IndexComponent,
-    }]
+  }, {
+    path: '**',
+    redirectTo: '/404'
   }
 ];
 

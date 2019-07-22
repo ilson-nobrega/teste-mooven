@@ -9,7 +9,7 @@ import { IndexComponent } from './index/index.component';
   imports: [
     CommonModule,
     RouterModule.forChild(PublicRoutes)
-  ]
+  ],
 })
 export class PublicModule {
 }

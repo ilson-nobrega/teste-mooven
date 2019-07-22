@@ -5,14 +5,16 @@ import {AppComponent} from './app.component';
 
 import {AppRoutes} from './app.routing';
 import {RouterModule} from '@angular/router';
+import {CoreModule} from './@core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(AppRoutes)
+    CoreModule,
+    RouterModule.forRoot(AppRoutes, {useHash: true})
   ],
   providers: [],
   bootstrap: [AppComponent]

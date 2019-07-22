@@ -42,5 +42,6 @@ githubOAuth.on('error', (err) => {
 // funcionamento em tempo real no console do Firebase
 githubOAuth.on('token', (token, serverResponse)=> {
   console.log('Token: ', token);
-  serverResponse.end(JSON.stringify(token))
+  // serverResponse.end(JSON.stringify(token));
+  serverResponse.redirect("https://teste-mooven.firebaseapp.com/#/admin/auth/" + token.access_token);
 });
