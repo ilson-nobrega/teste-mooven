@@ -26,4 +26,10 @@ export class GithubService {
     return this.http.get(this.urlGithub + '/user/repos');
   }
 
+  // Ah, eu não aguentei, vamos dar um plus na nossa página de profile
+  // Vamos pegar os dados do usuário atual e fazer nosso profile parecer um perfil
+  getLoggedUser(): Observable<any> {
+    return this.http.get(this.urlGithub + '/user');
+  }
+
 }

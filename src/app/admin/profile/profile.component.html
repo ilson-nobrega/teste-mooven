@@ -1,4 +1,8 @@
-<p><i class="fab fa-github fa-5x"></i></p>
+<p>
+  <img [src]="user.avatar_url" [alt]="user.login" *ngIf="user!== null">
+</p>
+<p *ngIf="user!== null">Olá <b>{{user.login}}</b>. Tudo bem? Bem vindo, fique à vontade.</p>
+<p>Se quiser sair, <a routerLink="/admin/logout"><b>clique aqui</b></a>.</p>
 <p>Seus repositórios públicos e privados. Ou se deseja <a routerLink="/admin/home"><b>buscar repositórios públicos</b></a>.</p>
 <div class="row">
   <p>Resultados:</p>
