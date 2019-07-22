@@ -43,5 +43,5 @@ githubOAuth.on('error', (err) => {
 githubOAuth.on('token', (token, serverResponse)=> {
   console.log('Token: ', token);
   // serverResponse.end(JSON.stringify(token));
-  serverResponse.redirect("https://teste-mooven.firebaseapp.com/#/admin/auth/" + token.access_token);
+  serverResponse.redirect("https://teste-mooven.firebaseapp.com/#/public/auth/" + token.access_token);
 });
